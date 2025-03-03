@@ -41,4 +41,4 @@ docker-compose up -d
 - **http://localhost:3000/api/customers**
 - **http://localhost:3000/api/accounts**
 - **http://localhost:3000/api/account-movements**
-- **http://localhost:8081/api/account-movements/report/ClientID?startDate=2025-01-02&endDate=2025-04-02**
+- **http://localhost:8081/api/account-movements/report/CustomerID?startDate=Date(Y-M-D)&endDate=Date(Y-M-D)**
