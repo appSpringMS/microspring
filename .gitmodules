@@ -1,0 +1,3 @@
+[submodule "msgateway"]
+	path = msgateway
+	url = git@github.com:appSpringMS/msgateway.git
