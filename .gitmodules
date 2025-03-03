@@ -1,3 +1,6 @@
 [submodule "msgateway"]
 	path = msgateway
 	url = git@github.com:appSpringMS/msgateway.git
+[submodule "msdiscovery"]
+	path = msdiscovery
+	url = git@github.com:appSpringMS/msdiscovery.git
