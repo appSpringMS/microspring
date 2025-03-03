@@ -1,0 +1,87 @@
+services:
+  msdiscovery:
+    image: msdiscovery:latest
+    container_name: msdiscovery
+    build:
+      context: ./msdiscovery
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    networks:
+      - microservices-network
+
+  msgateway:
+    image: msgateway:latest
+    container_name: msgateway
+    build:
+      context: ./msgateway
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - msdiscovery
+    networks:
+      - microservices-network
+
+  msaccount:
+    image: msaccount:latest
+    container_name: msaccount
+    build:
+      context: ./msaccount
+      dockerfile: Dockerfile
+    depends_on:
+      - msdiscovery
+    networks:
+      - microservices-network
+
+  mscustomer:
+    image: mscustomer:latest
+    container_name: mscustomer
+    build:
+      context: ./mscustomer
+      dockerfile: Dockerfile
+    depends_on:
+      - msdiscovery
+    networks:
+      - microservices-network
+  db-customer:
+    container_name: db-customer
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ms_customers
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5431:5431
+    expose:
+      - 5431
+    networks:
+      - microservices-network
+    command: -p 5431
+
+  db-account:
+    container_name: db-account
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ms_accounts
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+    networks:
+      - microservices-network
+    command: -p 5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+networks:
+  microservices-network:
+    driver: bridge
