@@ -24,3 +24,20 @@ El proyecto utiliza PostgreSQL como base de datos. Puedes configurar las bases d
 
 ```sh
 docker-compose up -d
+
+## Configuración Adiciónal
+## Adiciónal para complementar en el Futuro
+- **Spring Security**
+- **Keycloak**
+- **Resilience4jy**
+- **Apache Kafka**
+- **Zipkin**
+- **Micrometer**
+- **Prometheus**
+- **Grafana**
+
+## Rutas
+- **http://localhost:3000/api/customers**
+- **http://localhost:3000/api/accounts**
+- **http://localhost:3000/api/account-movements**
+- **http://localhost:8081/api/account-movements/report/ClientID?startDate=2025-01-02&endDate=2025-04-02**
