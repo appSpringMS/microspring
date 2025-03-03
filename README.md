@@ -24,6 +24,7 @@ El proyecto utiliza PostgreSQL como base de datos. Puedes configurar las bases d
 
 ```sh
 docker-compose up -d
+```
 
 ## Configuración Adiciónal
 ## Adiciónal para complementar en el Futuro
