@@ -7,3 +7,6 @@
 [submodule "mscustomer"]
 	path = mscustomer
 	url = git@github.com:appSpringMS/mscustomer.git
+[submodule "msaccount"]
+	path = msaccount
+	url = git@github.com:appSpringMS/msaccount.git
